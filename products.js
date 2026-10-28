@@ -5,7 +5,7 @@
   category: "Панели", "Инверторы", "Аккумуляторы", "Комплектующие", "Комплекты".
   ВАЖНО: замените TELEGRAM_USERNAME на username своего Telegram без символа @.
 */
-const TELEGRAM_USERNAME = "adamm008";
+const TELEGRAM_USERNAME = "islyamdrrrr";
 
 const PRODUCTS = [
   {
