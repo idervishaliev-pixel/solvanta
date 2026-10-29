@@ -16,7 +16,23 @@ const cartBottom = document.querySelector("#cartBottom");
 const cartTotal = document.querySelector("#cartTotal");
 const emptyCatalog = document.querySelector("#emptyCatalog");
 let activeCategory = "Все";
-let cart = {};
+function loadCart() {
+  try {
+    return JSON.parse(localStorage.getItem("solvantaCart")) || {};
+  } catch {
+    return {};
+  }
+}
+
+let cart = loadCart();
+
+function saveCart() {
+  try {
+    localStorage.setItem("solvantaCart", JSON.stringify(cart));
+  } catch (error) {
+    console.error("Не удалось сохранить корзину:", error);
+  }
+}
 
 const money = (amount) => new Intl.NumberFormat("ru-RU", {
   style: "currency", currency: "RUB", maximumFractionDigits: 0
@@ -80,6 +96,7 @@ function renderProducts() {
 }
 
 function renderCart() {
+  saveCart();
   const entries = Object.entries(cart).filter(([id, quantity]) =>
     PRODUCTS.some(product => product.id === id) && quantity > 0
   );

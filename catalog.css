@@ -1,0 +1,91 @@
+/* SOLVANTA — отдельная страница каталога. Использует цвета и типографику основного сайта. */
+.catalog-page { background: var(--paper); }
+.catalog-page .site-header { position: sticky; top: 0; }
+.catalog-page .nav-current { color: var(--yellow); }
+.catalog-hero {
+  min-height: 440px; position: relative; overflow: hidden; display: flex; align-items: center;
+  color: var(--white); background: var(--graphite);
+}
+.catalog-hero::before {
+  content: ""; position: absolute; inset: 0;
+  background: linear-gradient(90deg,rgba(10,12,13,.97),rgba(10,12,13,.82) 48%,rgba(10,12,13,.38)),
+  url("https://images.unsplash.com/photo-1509391366360-2e959784a276?auto=format&fit=crop&w=2200&q=85") center 54%/cover;
+  opacity: .96;
+}
+.catalog-hero-inner { position: relative; z-index: 1; width: min(760px,80%); margin-left: 10.5%; padding: 75px 0 86px; }
+.catalog-kicker { color: rgba(255,255,255,.45); font-size: 9px; letter-spacing: .2em; margin-bottom: 15px; }
+.catalog-hero h1 { font-size: clamp(48px,6.2vw,78px); margin-bottom: 22px; }
+.catalog-hero-copy { max-width: 470px; color: rgba(255,255,255,.7); font-size: 13px; line-height: 1.9; }
+.catalog-hero-meta { display:flex; align-items:center; gap:10px; margin-top:26px; color:rgba(255,255,255,.62); font-size:10px; }
+.catalog-hero-index { position:absolute; right:6.2%; bottom:28px; display:flex; gap:22px; color:rgba(255,255,255,.48); font-size:8px; letter-spacing:.15em; }
+.catalog-hero-index span:first-child { color:var(--yellow); }
+.catalog-browser { background:var(--white); padding:28px 0 88px; }
+.catalog-breadcrumb { display:flex; gap:10px; align-items:center; font-size:10px; color:#8d8b83; margin-bottom:62px; }
+.catalog-breadcrumb a:hover { color:#94751b; }
+.catalog-breadcrumb strong { color:var(--ink); font-weight:700; }
+.catalog-page-heading { margin-bottom:35px; }
+.category-grid { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:14px; }
+.category-card {
+  position:relative; display:flex; flex-direction:column; text-align:left; min-width:0; padding:0;
+  border:1px solid #e5e3dc; background:#fffefa; color:var(--ink); cursor:pointer; overflow:hidden;
+  transition:transform .22s,box-shadow .22s,border-color .22s;
+}
+.category-card:hover { transform:translateY(-4px); border-color:#d6c17b; box-shadow:0 15px 32px rgba(20,20,15,.08); }
+.category-card-number { position:absolute; z-index:2; top:14px; left:14px; color:#fff; font-size:9px; letter-spacing:.14em; text-shadow:0 1px 8px #111; }
+.category-card-image { display:block; height:165px; background-color:#e5e4dd; background-position:center; background-size:cover; transition:transform .35s; }
+.category-card:hover .category-card-image { transform:scale(1.035); }
+.category-image-panels { background-image:url("https://images.unsplash.com/photo-1509391366360-2e959784a276?auto=format&fit=crop&w=800&q=80"); }
+.category-image-inverters { background-image:url("https://e-solarpower.ru/images/detailed/7/Sila_vp_5000mh.jpg"); }
+.category-image-batteries { background-image:url("https://images.unsplash.com/photo-1594818379496-da1e345b0ded?auto=format&fit=crop&w=800&q=80"); }
+.category-image-accessories { background-image:url("https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&w=800&q=80"); }
+.category-card-bottom { display:flex; align-items:center; justify-content:space-between; gap:10px; min-height:94px; padding:17px 16px; }
+.category-card-bottom > span:first-child { display:flex; flex-direction:column; gap:7px; min-width:0; }
+.category-card-bottom strong { font-size:13px; line-height:1.35; letter-spacing:-.035em; }
+.category-card-bottom small { color:var(--muted); font-size:9px; line-height:1.5; }
+.category-arrow { color:#a1842e; font-size:20px; flex-shrink:0; }
+.category-card-all { background:var(--graphite); color:var(--white); border-color:var(--graphite); }
+.category-card-all .category-card-bottom { min-height:259px; }
+.category-card-all .category-card-bottom small { color:rgba(255,255,255,.55); }
+.category-all-mark { position:absolute; top:22px; left:20px; color:var(--yellow); font-size:40px; font-weight:300; }
+.category-card-all .category-arrow { color:var(--yellow); }
+.products-area { padding-top:100px; scroll-margin-top:100px; }
+.products-area-heading { display:flex; align-items:end; justify-content:space-between; gap:24px; margin-bottom:32px; }
+.products-area-heading .eyebrow { margin-bottom:18px; }
+.products-area-heading h2 { font-size:clamp(32px,4vw,48px); }
+.products-area-heading h2 span { color:#a1842e; }
+.catalog-back-button { border:1px solid #dcd9d0; padding:12px 15px; background:transparent; color:var(--ink); font-size:10px; font-weight:700; cursor:pointer; white-space:nowrap; }
+.catalog-back-button:hover { background:var(--graphite); color:var(--white); border-color:var(--graphite); }
+.catalog-page .catalog-grid { grid-template-columns:repeat(3,minmax(0,1fr)); }
+.catalog-page .product-image { height:220px; }
+.catalog-page .catalog-tools { margin-bottom:26px; }
+.catalog-page .catalog-bottom { margin-top:36px; }
+.catalog-help { background:var(--graphite); color:var(--white); padding:78px 0; }
+.catalog-help-inner { display:flex; align-items:center; justify-content:space-between; gap:28px; }
+.catalog-help h2 { font-size:clamp(32px,4vw,48px); }
+.catalog-help .eyebrow { margin-bottom:20px; }
+.catalog-help .button { flex-shrink:0; }
+@media(max-width:1000px) {
+  .category-grid { grid-template-columns:repeat(2,minmax(0,1fr)); }
+  .category-card-all .category-card-bottom { min-height:94px; }
+  .catalog-page .catalog-grid { grid-template-columns:repeat(2,minmax(0,1fr)); }
+}
+@media(max-width:720px) {
+  .catalog-hero { min-height:400px; }
+  .catalog-hero-inner { width:86%; margin-left:7%; padding:65px 0 75px; }
+  .catalog-hero h1 { font-size:clamp(43px,12vw,62px); }
+  .catalog-hero-index { right:7%; }
+  .catalog-browser { padding-top:24px; }
+  .catalog-breadcrumb { margin-bottom:45px; }
+  .category-grid { grid-template-columns:1fr 1fr; gap:10px; }
+  .category-card-image { height:125px; }
+  .category-card-bottom { padding:13px 11px; min-height:88px; }
+  .category-card-bottom strong { font-size:11px; }
+  .category-card-bottom small { font-size:8px; }
+  .category-card-number { top:10px; left:10px; font-size:8px; }
+  .category-all-mark { top:12px; left:12px; font-size:30px; }
+  .products-area { padding-top:72px; }
+  .products-area-heading { align-items:flex-start; flex-direction:column; gap:18px; }
+  .catalog-page .catalog-grid { grid-template-columns:1fr; }
+  .catalog-page .product-image { height:230px; }
+  .catalog-help-inner { align-items:flex-start; flex-direction:column; }
+}
